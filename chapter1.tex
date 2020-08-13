@@ -1,0 +1,158 @@
+\section{Euklid, Teilbarkeit}
+
+\subsection{Teilbarkeit}
+
+\begin{karte}{Teiler, \(\ggT, \kgV\), Teilerfremdheit}
+    \(n\) eine natürliche Zahl. \(d\in \N\) ist ein \textit{Teiler} 
+    von \(n\), falls \(t\in \N\) existiert mit \(d\cdot t = n\). Schreibe \(d \;|\; n\).
+    Dann heißt \(n\) \textit{Vielfaches} von \(d\).
+
+    Für zwei Zahlen \(m,n\) ist die Menge aller gemeinsamen Teiler endlich 
+    und nicht leer. Das größte Element dieser Menge heißt 
+    \textit{größter gemeinsamer Teiler}: \(\ggT(m,n)\) oder \((m,n)\).
+
+    In der Menge aller gemeinsamen Vielfachen von \(m\) und \(n\) 
+    liegt \(m\cdot n\). Also gibt es ein kleinstes Element dieser Menge, 
+    das \textit{kleinste gemeinsame Vielfache} von \(m\) und \(n\) 
+    wird mit \(\kgV(m,n)\) notiert. 
+
+    \(m\) und \(n\) sind \textit{teilerfremd}, wenn der einzige gemeinsame Teiler 
+    in \(\N\) \(1\) ist.
+
+    Es gilt \(\ggT(0,m) = m\). \(\ggT(|m|,|n|) = \ggT(m,n)\).
+\end{karte}
+
+\begin{karte}{\(\ggT\) als Linearkombination}
+    Es seien \(m,n\in \Z\) gegeben. Dann gibt es \(c,d\in \Z\) mit 
+    \[ mc+nd=\ggT(m,n). \]
+\end{karte}
+
+\begin{karte}{Teiler des \(\ggT\)}
+    Für ganze Zahlen \(m,n\) sind die Teiler von \(\ggT(m,n)\) genau die gemeinsamen 
+    Teiler von \(m\) und \(n\).
+\end{karte}
+
+\begin{karte}{Division mit Rest}
+    Für jede ganze Zahl \(k\) und jede natürliche Zahl \(n\) gibt es 
+    eindeutig bestimmte Zahlen \(f\in \Z\) und \(r\in \set{0,1,\ldots, n-1}\) mit 
+    \[ k=fn+r. \]
+\end{karte}
+
+\begin{karte}{Kongruenz modulo \(n\)}
+    Sei \(n\in\Z\) gegeben. Zwei Zahlen \(k,l\in \Z\) heißen 
+    \textit{kongruent modulo} \(n\), wenn \(n\) ein Teiler von \(k-l\) ist. 
+    Wir schreiben dann 
+    \[ k\equiv l\ (\mathrm{mod}\ n). \]
+\end{karte}
+
+\begin{karte}{\(\ggT\) Folgerungen}
+    Seien \(m,n\in\N\) gegeben.
+    \begin{enumerate}
+        \item Für \(g:= \ggT(m,n)\) sind die natürlichen Zahlen \(m/g\) und \(n/g\) teilerfremd.
+        \item Wenn \(m,n\) teilerfremd sind und \(u\in \N\) eine Zahl ist, sodass \(m\;|\; nu\) gilt, 
+        dann teilt \(m\) schon \(u\).
+        \item Es gilt \(\kgV(m,n) \cdot \ggT(m,n) = m\cdot n\).
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Gekürzte Brüche}
+    Jede rationale Zahl \(q\) lässt sich auf genau eine Art als 
+    \[ q=\frac{z}{n}, z\in \Z, n\in \N, \]
+    schreiben, wobei \(z\) und \(n\) teilerfremd sind.
+\end{karte}
+
+\subsection{Primzahlen}
+
+\begin{karte}{Primzahl}
+    Eine \textit{Primzahl} ist eine natürliche Zahl \(p>1\), die 
+    sich nicht als Produkt zweier natürlicher Zahlen schreiben lässt, 
+    also keinen natürlichen Teiler außer \(1\) und \(p\) hat. 
+    Die Menge der Primzahlen notieren wir mit \(\P\).
+\end{karte}
+
+\begin{karte}{Alternative Charakterisierung}
+    Es sei \(n>1\) eine natürliche Zahl. Dann sind äquivalent: 
+    \begin{enumerate}
+        \item \(n\) ist eine Primzahl.
+        \item Für jedes Paar \((a,b)\in \N^2\) von natürlichen Zahlen gilt:
+        \begin{center}
+            \(n\) teilt \(ab\) \(\Rightarrow\) \(n\) teilt \(a\) oder \(n\) teilt \(b\).
+        \end{center}
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Fundamentalsatz der Arithmetik}
+    Jede natürliche Zahl \(n\) lässt sich als Produkt von Primzahlen schreiben. 
+    Diese Darstellung ist eindeutig, wenn die Primfaktoren der Größe nach sortiert werden.
+\end{karte}
+
+\begin{karte}{\(p\)-adische Bewertung}
+    Es sei \(p\in \P\) eine Primzahl. Dann gibt es für jede ganze Zahl \(k\neq 0\)
+    eine eindeutig bestimmte Zahl \(\vp(k)\in \N_0\), sodass \(p^{\vp(k)}\) 
+    ein Teiler von \(k\) ist, aber \(p^{\vp(k)+1}\) nicht. 
+
+    Dann gilt insbesondere 
+    \[ k=\pm \prod_{p\in\P} p^{\vp(k)}. \]
+    Für \(k=0\) schreibt man formal \(\vp(0)=\infty\).
+
+    Es gelten \(\forall k,l\in\Z\) die Regeln 
+    \begin{align*}
+        \vp(k+l) &\geq \min \set{\vp(k), \vp(l)}, \\
+        \vp(k\cdot l) &= \vp(k) + \vp(l).
+    \end{align*}
+    \(\vp(k)\) heißt die \(p\)-adische Bewertung von \(k\).
+\end{karte}
+
+\begin{karte}{\(\vp\) und der \(\ggT\)}
+    Es seien \(a,b\in \N\). Dann gelten:
+    \begin{enumerate}
+        \item \(b\) teilt \(a\) genau dann, wenn 
+        \[ \forall p\in\P: \vp(b)\leq \vp(a). \]
+        \item Der \(\ggT\) von \(a\) und \(b\) ist 
+        \[ g=\prod_{p\in \P} p^{e_p}, e_p = \min \set{\vp(a),\vp(b)}. \]
+        \item Das \(\kgV\) von \(a\) und \(b\) ist 
+        \[ k=\prod_{p\in \P} p^{f_p}, f_p = \max \set{\vp(a),\vp(b)}. \]
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{\(p\)-adische Bewertung auf \(\Q\)}
+    Die Abbildung \(\abb{\vp}{\Z}{\N_0\cup \set{\infty}}\) heißt die \textit{\(p\)-adische Bewertung} auf 
+    \(Z\). Sie wird durch 
+    \[ \vp(\frac{z}{n}) := \vp(z) - \vp(n) \] 
+    zu einer Abbildung von \(\Q\) nach \(\Z\cup \set{\infty}\) fortgesetzt und behält 
+    ihre Eigenschaften bei. 
+\end{karte}
+
+\begin{karte}{Kleiner Satz von Fermat}
+    Es sei \(p\) eine Primzahl und \(c\in \Z\). Dann ist \(p\) ein Teiler von 
+    \(c^p - c\). 
+    
+    Alternativ: Falls \(c\) kein Vielfaches von \(p\) ist, gilt 
+    \[ c^{p-1} \equiv 1\ (\mathrm{mod}\ p). \]
+\end{karte}
+
+\subsection{Verteilung Primzahlen}
+
+\begin{karte}{Anzahl Primzahlen}
+    Es gibt unendlich viele Primzahlen.
+\end{karte}
+
+\begin{karte}{Lückenhaft}
+    Sei \(k\in\N\). Dann gibt es eine natürliche Zahl \(M\), sodass zwischen 
+    \(M\) und \(M+k\) keine Primzahl liegt. (\(M=(k+2)! + 2\))
+\end{karte}
+
+\begin{karte}{Harmonische Reihe Primzahlen}
+    Für jede reelle Zahl \(x > 1\) gilt 
+    \[ \sum_{p\in \P, p\leq x} \frac{1}{p} \geq \log(\log x) - \log 2. \]
+\end{karte}
+
+\begin{karte}{Lückenlos}
+    Sei \(\varepsilon > 0\) gegeben. Dann gibt es eine reelle Zahl \(x_0\), sodass 
+    für alle \(x\geq x_0\) im Intervall \([x,(1+\varepsilon)x]\) eine Primzahl existiert.
+\end{karte}
+
+\begin{karte}{Dichtheitssatz}
+    Die Menge aller Brüche \(p/l\), wobei \(p\) und \(l\) Primzahlen sind, ist 
+    dicht in \(\R_{\geq 0}\).
+\end{karte}

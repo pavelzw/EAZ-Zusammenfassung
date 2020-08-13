@@ -1,1 +1,1 @@
-Markovketten Zusammenfassung
+EAZ Zusammenfassung
