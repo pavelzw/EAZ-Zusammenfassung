@@ -1,0 +1,364 @@
+\section{Gruppen}
+
+\subsection{Magmen}
+
+\begin{karte}{Magma}
+    Ein \textit{Magma} (oder \textit{Verknüpfungsgebilde}) ist eine 
+    Menge mit einer (fixierten) Verknüpfung. Also ein Paar \((M,*)\), 
+    wobei \(M\) eine Menge und 
+    \[ \abb{*}{M\times M}{M} \]
+    eine Abbildung ist.
+
+    Ein Magma \((M,*)\) heißt \textit{assoziativ}, wenn für alle 
+    \(l,m,n\in M\) die Regel 
+    \[ (l*m)*n=l*(m*n) \] 
+    gilt. Man nennt \((M,*)\) dann auch eine \textit{Halbgruppe}.
+
+    Ein Element \(e\in M\) heißt ein (beidseitiges) \textit{Neturalelement} 
+    des Magmas \((M,*)\), wenn für alle \(m\in M\) die Regel 
+    \[ m*e = e*m = m \]
+    gilt. Eine Halbgruppe mit Neturalelement nennt man auch ein \textit{Monoid}.
+
+    Ein Magma \((M,*)\) heißt \textit{kommutativ}, wenn für alle \(m,n\in M\) die 
+    Regel 
+    \[ m*n=n*m \] 
+    gilt.
+
+    Für \(A,B\subseteq M\) schreiben wir \(A*B := \set{a*b \;|\;a\in A, b\in B}\).
+\end{karte}
+
+\begin{karte}{Untermagma}
+    Eine Teilmenge \(U \subseteq M\) heißt \textit{Untermagma}, falls 
+    \(U*U\subseteq U\) gilt. Dadurch wird \((U,*)\) ein Magma.
+    
+    Assoziativität und Kommutativität vererben sich. 
+    Der Durchschnitt einer beliebigen Familie \((U_i)_{i\in I}\) 
+    von Untermagmen ist wieder ein Untermagma von \(M\).
+
+    Für \(X \subset M\) sei \(\langle X \rangle_{Magma}\) das \textit{Magmenerzeugnis} von \(X\) in \(M\). 
+\end{karte}
+
+\begin{karte}{Homomorphismus}
+    Seien \((M,*)\) und \((N,\diamond)\) zwei Magmen. 
+    Ein \textit{Homomorphismus} (auch \textit{verknüpfungserhaltende Abbildung})
+    von \(M\) nach \(N\) ist eine Abbildung \(\abb{\Phi}{M}{N}\), 
+    sodass für alle \(m_1, m_2 \in M\) die Gleichung 
+    \[ \Phi(m_1*m_2) = \Phi(m_1) \diamond \Phi(m_2) \]
+    stimmt.
+
+    Das Bild \(\Phi(M)\) ist dann ein Untermagma von \(N\). 
+    Das Urbild \(\Phi^{-1}(U)\) eines Untermagmas von \(N\) ist ein Untermagma von \(N\).
+
+    Ist \(\Phi\) bijektiv, so nennt man ihn einen \textit{Isomorphismus}. 
+    Dann ist auch \(\Phi^{-1}\) ein Homomorphismus. 
+    
+    Falls \(M=N\), haben wir \textit{Endomorphismen} und im bijektiven 
+    Fall \textit{Automorphismen}. 
+
+    Homomorphismen sind unter Komposition abgeschlossen.
+\end{karte}
+
+\subsection{Der Gruppenbegriff}
+
+\begin{karte}{Gruppe}
+    Es sei \((M,*)\) ein Magma. Dann heißt das Paar \((M,*)\) 
+    eine \textit{Gruppe}, wenn es assoziativ ist, ein neutrales 
+    Element \(e\) existiert und für jedes \(x\in M\) ein 
+    \(y\in M\) existiert, sodass 
+    \[ x*y=y*x=e \]
+    gilt.
+
+    Eine Gruppe ist \textit{kommutativ} oder \textit{abelsch}, 
+    wenn sie als Magma kommutativ ist.
+\end{karte}
+
+\begin{karte}{Untergruppe}
+    Sei \((G,*)\) eine Gruppe. Dann ist eine \textit{Untergruppe} von 
+    \(G\) ein nichtleeres Untermagma \(U\), das unter Inversenbildung 
+    abgeschlossen ist. \(U\subseteq G\) ist genau dann eine 
+    Untergruppe, wenn \(U\) nicht leer ist und 
+    \[ \forall x,y\in U: x y^{-1}\in U. \]
+
+    Seien \((U_i)_{i\in I}\) Untergruppen von \(G\). Dann ist auch \(\bigcap_{i\in I} U_i\) 
+    eine Untergruppe von \(G\).
+\end{karte}
+
+\begin{karte}{Gruppenerzeugnis, zyklische Gruppe}
+    Für eine Teilmenge \(M\) der Gruppe \(G\) sei \(I\) die 
+    Menge aller Untergruppen, die \(M\) enthalten. Dann ist auch 
+    \[ \langle M \rangle := \bigcap_{i\in I} i \]
+    eine Gruppe, sie heißt das (Gruppen-)Erzeugnis von \(M\) 
+    oder die \textit{von \(M\) erzeugte Untergruppe von \(G\)}.
+    Es gilt 
+    \[ \langle M \rangle = \set{ x_1 \cdots x_k 
+    \;|\; k\in \N_0, \forall i\leq k: x_i \in M \text{ oder } x_i^{-1} \in M }. \]
+
+    Eine Gruppe heißt \textit{zyklisch}, wenn es ein Element \(a\in G\) 
+    gibt, sodass \(G = \langle \set{a} \rangle =: \langle a \rangle\). 
+\end{karte}
+
+\begin{karte}{Ordnung}
+    Die Kardinalität einer Gruppe nennt man auch ihre \textit{Ordnung}. 
+    Die \textit{Ordnung eines Elementes \(g\in G\)} ist definiert als die Ordnung der von 
+    \(g\) erzeugten Untergruppe.
+    Wenn \(g\in G\) endliche Ordnung hat, dann ist diese gleich 
+    der kleinsten natürlichen Zahl \(k\), für die \(g^k = e_G\) gilt.
+\end{karte}
+
+\begin{karte}{Satz von Lagrange}
+    Sei \(G\) eine endliche Gruppe und \(H\) eine Untergruppe von 
+    \(G\). Dann ist die Ordnung von \(H\) ein Teiler der Ordnung von \(G\).
+\end{karte}
+
+\begin{karte}{Index}
+    Wir definieren auf \(G\) die Relation \(\sim\) durch 
+    \[ g_1 \sim g_2 :\Leftrightarrow g_1 g_2^{-1} \in H. \]
+
+    Wenn \(H\leq G\) zwei Gruppen sind, dann heißt die Anzahl 
+    der Äquivalenzklassen auch der \textit{Index} von \(H\in G\): 
+    \((G:H)\). 
+    Es gilt für endliche Gruppen: 
+    \[ \#G = \#H \cdot (G:H). \]
+\end{karte}
+
+\begin{karte}{Gruppenhomomorphismus}
+    Seien \((G,*)\) und \((H,\bullet)\) zwei Gruppen. 
+    Ein \textit{(Gruppen-)Homomorphismus} von \(G\) nach \(H\) 
+    ist eine Abbildung \(\abb{f}{G}{H}\), für die gilt: 
+    \begin{enumerate}
+        \item \(\forall x,y\in G: f(x*y)= f(x)\bullet f(y)\).
+        \item \(f(e_G) = e_H\).
+        \item \(\forall x\in G: f(x^{-1}) = f(x)^{-1}\).
+    \end{enumerate}
+
+    Die Menge aller Homomorphismen von \(G\) nach \(H\) nennen 
+    wir \(\Hom(G,H)\).
+\end{karte}
+
+\begin{karte}{Eigenschaften von Homomorphismen}
+    Seien \(G\) und \(H\) Gruppen und \(\abb{f}{G}{H}\) ein 
+    Magmenhomomorphismus. Dann gelten die folgenden Aussagen:
+    \begin{enumerate}
+        \item \(f\) ist ein Gruppenhomomorphismus. 
+        \item \(f^{-1}(\set{e_H})\) ist eine Untergruppe von \(G\).
+        \item \(f(G)\) ist eine Untergruppe von \(H\).
+        \item \(f\) ist genau dann injektiv, wenn \(f^{-1}(\set{e_H}) = \set{e_G}\).
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Kern}
+    Ist \(\abb{f}{G}{H}\) ein Homomorphismus zwischen zwei Gruppen, 
+    so heißt die Untergruppe \(f^{-1}(\set{e_H}) \subseteq G\) der 
+    \textit{Kern} von \(f\).\\
+    \(f\in \Hom(G,H)\) ist genau dann injektiv, wenn \(\Kern(f) = \set{e_G}\).
+\end{karte}
+
+\begin{karte}{Konjugation}
+    Sei \(G\) eine Gruppe. Für festes \(g\in G\) ist die Abbildung 
+    \[ \abb{\kappa_g}{G}{G}, \kappa_g(x) := g x g^{-1} \]
+    ein Automorphismus von \(G\). Sie heißt \textit{Konjugation} mit \(g\).
+    
+    Zwei Gruppenmitglieder \(x,y\in G\) heißen \textit{zueinander konjugiert}, 
+    wenn es ein \(g\in G\) gibt mit \(y=g x g^{-1}\).
+
+    Die Abbildung \(\abb{\kappa}{G}{\Aut(G)}, g\mapsto \kappa_g\), 
+    ist ein Homomorphismus. Ihr Kern heißt das \textit{Zentrum} 
+    \(Z(G)\) von \(G\), es gilt also 
+    \[ Z(G) = \set{g\in G \;|\; \forall x\in G: gx=xg}. \]
+    Das Bild \(\kappa(G) =: \mathrm{Inn}(G)\) wird die Untergruppe 
+    der \textit{inneren Automorphismen} in \(\Aut(G)\) genannt.
+\end{karte}
+
+\begin{karte}{Normalteiler}
+    Ein \textit{Normalteiler} in einer Gruppe \(G\) ist 
+    eine Untergruppe \(N\), sodass für alle \(n\in N\) und 
+    \(g\in G\) die Bedingung \(g n g^{-1} \in N\) erfüllt ist (\(U \lhd G\)). 
+    Anders gesagt: \(N\) ist invariant unter allen inneren Automorphismen.\\
+    Dann gilt sogar \(\forall g\in G: g N g^{-1} = N\).\\
+    Jeder Kern ist ein Normalteiler.
+\end{karte}
+
+\subsection{Faktorgruppen}
+
+\begin{karte}{Nebenklassen}
+    \begin{enumerate}
+        \item Sei \(G\) eine Gruppe und \(U\leq G\). Dann heißen 
+        \(g,h\in G\) \textit{kongruent modulo \(U\)}, wenn 
+        \[ g^{-1}h\in U. \]
+        Das ist eine Äquivalenzrelation auf \(G\), die Äquivalenzklassen 
+        \(gU = \set{gu \;|\; u\in U}\) heißen \textit{Linksnebenklassen} 
+        nach \(U\). 
+        Die Menge dieser Nebenklassen heißt der \textit{Faktorraum} \(G/U\).\\
+        Die Abbildung \( \abb{\pi_U}{G}{G/U}, g\mapsto gU \) heißt 
+        die \textit{kanonische Projektion}.
+        \item Analog gibt es auch Rechtsnebenklassen \(Ug\), 
+        die ebenfalls eine disjunkte Zerlegung von \(G\) liefern.
+        \item \(Ug = gU\) für alle \(g\in G\) genau dann, wenn 
+        \(U\) ein Normalteiler von \(G\) ist.
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Faktorgruppe}
+    Es sei \(N\lhd G\) ein Normalteiler in \(G\). Dann wird auf \(G/N\) 
+    durch 
+    \[ (gN) \cdot (hN) := ghN \]
+    eine Verknüpfung definiert. Somit bildet \(G/N\) eine Gruppe, 
+    die \textit{Faktorgruppe von \(G\) modulo \(N\)}. \(\pi_N\) 
+    ist ein hierbei ein Gruppenhomomorphismus. 
+    Der Kern ist \(N\). Jeder 
+\end{karte}
+
+\begin{karte}{Homomorphiesatz}
+    Seien \(G,H\) zwei Gruppen und \(N\lhd G\) ein Normalteiler. 
+    \begin{enumerate}
+        \item Die Abbildung 
+        \[ \abb{L}{\Hom(G/N, H)}{\Hom(G,H)}, \Psi \mapsto \Psi \circ \pi_N \]
+        ist injektiv und besitzt als Bild die Menge aller 
+        \(\Phi \in \Hom(G,H)\) mit der Eigenschaft 
+        \[ N\subseteq \Kern(\Phi). \]
+        \item Ist \(\abb{\Phi}{G}{H}\) ein Homomorphismus mit \(\Kern(\Phi)=N\), 
+        dann ist 
+        \[ \tilde{\Phi}:G/N\ni gN \mapsto \Phi(g) \in \Bild(\Phi) \]
+        ein Isomorphismus zwischen \(G/N\) und \(\Bild(\Phi)\).
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Erster Isomorphiesatz}
+    Es seien \(G\) eine Gruppe, \(H\leq G\) eine Untergruppe und 
+    \(N \lhd G\) ein Normalteiler. 
+    Dann ist auch \(HN = \set{hn \;|\; h\in H, n\in N}\) eine Untergruppe 
+    von \(G\) und es gibt einen Isomorphismus 
+    \[ H/(N\cap H) \cong (HN)/N. \]
+\end{karte}
+
+\begin{karte}{Einfachheit}
+    Eine Gruppe \(G\) heißt \textit{einfach}, wenn 
+    sie nichttrivial ist und keine Normalteiler außer \(G\) und \(\set{e_G}\) besitzt. \\
+    Eine nichttriviale Gruppe ist also genau dann einfach, wenn jeder nichtkonstante 
+    Homomorphismus, der auf ihr definiert ist, injektiv ist.\\
+    Eine abesche Gruppe ist genau dann einfach, wenn sie Primzahlordnung hat. 
+\end{karte}
+
+\begin{karte}{Direktes Produkt}
+    Seien \(G\) und \(H\) zwei Gruppen. Dann ist auch die Menge 
+    \(G \times H\) mit komponentenweiser Verknüpfung, also 
+    \[ \forall (g,h), (g',h') \in G\times H: (g,h)\cdot (g',h') := (gg', hh') \] 
+    eine Gruppe. Sie heißt das \textit{direkte Produkt} von \(G\) und \(H\).
+\end{karte}
+
+\begin{karte}{Freie Gruppe}
+    Sei \(S\) eine Menge. 
+    Eine \textit{freie Gruppe} über \(S\) ist eine Gruppe 
+    \(F\) mit einer Abbildung \(\abb{f}{S}{F}\), sodass für jede 
+    Gruppe \(G\) und jede Abbildung \(\abb{\varphi}{S}{G}\) genau ein 
+    Gruppenhomomorphismus \(\abb{\Phi}{F}{G}\) existiert, für den 
+    \[ \forall s\in S: \varphi(s) = \Phi(f(s)) \]
+    gilt.
+
+    Analog das \textit{freie Monoid} \(M\) über \(S\)
+    als ein Monoid \(M\) mit einer Abbildung \(\abb{f}{S}{M}\), sodass 
+    für jede Abbildung von \(S\) in ein Monoid \(N\) genau ein Monoidhomomorphismus 
+    von \(M\) nach \(N\) existiert, sodass das folgende Diagramm kommutiert:
+    \begin{center}
+    \begin{tikzcd}
+        & M \arrow[dashed]{dd}{\Phi} \\
+        S \arrow{ru}{f} \arrow{rd}{\varphi} \\
+        & N
+    \end{tikzcd}
+    \end{center}
+
+    Es gilt Eindeutigkeit und Existenz.
+\end{karte}
+
+\begin{karte}{Erzeuger von Relationen}
+    Jede Gruppe \(G\) lässt sich als Faktorgruppe einer freien 
+    Gruppe schreiben, notfalls nehme man die freie Gruppe \(F\) über 
+    \(G\) und setze die Identität auf \(G\) zu einem Gruppenhomomorphismus 
+    von \(F\) nach \(G\) fort.
+\end{karte}
+
+\subsection{Gruppenoperationen}
+
+\begin{karte}{Gruppenoperation}
+    Sei \((G,*)\) eine Gruppe und \(M\) eine Menge. Dann 
+    ist eine \textit{Operation von \(G\) auf \(M\)} definiert als eine Abbildung 
+    \[ \abb{\bullet}{G\times M}{M}, \] 
+    sodass die folgenden Bedingungen erfüllt sind. 
+    \begin{enumerate}
+        \item \(\forall m\in M: e_G \bullet m = m\),
+        \item \(\forall m\in M, g_1, g_2\in G: g_1 \bullet (g_2 \bullet m) 
+        = (g_1 * g_2) \bullet m\).
+    \end{enumerate}
+    Eine Menge \(M\) mit einer festen Operation einer Gruppe \(G\) 
+    heißt \(G\)-Menge. 
+\end{karte}
+
+\begin{karte}{Operationen und symmetrische Gruppe}
+    Es seien \(G\) eine Gruppe und \(M\) eine Menge. 
+    \begin{enumerate}
+        \item Für jeden Homomorphismus \(\abb{\Phi}{G}{\Sym(M)}\) 
+        wird durch 
+        \[ g\bullet m := \Phi(g)(m) \]
+        eine Operation von \(G\) auf \(M\) festgelegt. 
+        \item Für jede Operation \(\bullet \) von 
+        \(G\) auf \(M\) gibt es einen Homomorphismus \(\Phi\), 
+        sodass \(\bullet\) wie in 1. konstruiert werden kann.
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Äquivalenzrelation Operation}
+    Sei \(G\) eine Gruppe, die auf der Menge \(M\) operiert. Dann wird auf 
+    \(M\) durch die Vorschrift 
+    \[ m_1 \sim m_2 :\Leftrightarrow \exists g\in G: m_1 = g\bullet m_2 \]
+    eine Äquivalenzrelation definiert.
+\end{karte}
+
+\begin{karte}{Bahnen, Transitivität, Stabilisator, Fixpunkt}
+    Die Äquivalenzklassen der Äquivalenzrelation werden 
+    \textit{Bahnen} oder \textit{Orbiten} genannt. Die \textit{Bahn} 
+    von \(m\) wird als 
+    \[ G\bullet m = \set{g\bullet m \;|\; g\in G} \]
+    notiert.
+
+    Die Operation heißt \textit{transitiv}, wenn es genau eine Bahn gibt, 
+    also wenn ein \(m_0\) existiert, sodass für jedes \(m\in M\) ein 
+    \(g\in G\) existiert mit der Eigenschaft 
+    \[ m = g\bullet m_0. \]
+
+    Der \textit{Stabilisator eines Elements \(m\in M\)} unter 
+    einer gegebenen Operation der Gruppe ist definiert als 
+    \[ \Stab_G(m) := \set{g\in G \;|\; g\bullet m = m}. \]
+
+    Ein \textit{Fixpunkt von \(G\)} auf \(M\) ist ein Element, 
+    dessen Stabilisator ganz \(G\) ist. Die Menge aller Fixpunkte 
+    wird mit \(M^G\) notiert: 
+    \[ M^G := \set{m\in M \;|\; \forall g\in G: g\bullet m=m}. \]
+\end{karte}
+
+\begin{karte}{\(G\)-äquivariante Abbildung}
+    Wenn die Operation transitiv ist und \(m\in M\) irgendein 
+    Element sowie \(H\leq G\) dessen Stabilisator, dann ist die Abbildung 
+    \[ \abb{f}{G}{M}, f(g) := g\bullet m, \]
+    surjektiv und auf den Linksnebenklassen von \(H\) konstant. 
+    Sie legt also eine surjektive Abbildung 
+    \(\abb{\tilde{f}}{G/H}{M}\) fest, für die gilt: 
+    \[ \forall g\in G,x\in G/H: \tilde{f}(gx)=g\bullet \tilde{f}(x). \]
+    Diese Abbildung ist dazu noch injektiv, also sind \(G/H\) und 
+    \(G\bullet m\) gleich mächtig.
+
+    Wenn \(M,N\) zwei Mengen mit \(G\)-Operationen sind, so heißt eine Abbildung 
+    \( \abb{f}{M}{N} \) mit \(f(gm) = gf(m)\) eine \textit{\(G\)-äquivariante Abbildung}. Die Abbildung 
+    \(\tilde{f}\) ist ein Beispiel hierfür.
+\end{karte}
+
+\begin{karte}{Bahnbilanzformel}
+    
+\end{karte}
+
+\begin{karte}{}
+
+\end{karte}
+
+\begin{karte}{}
+
+\end{karte}
