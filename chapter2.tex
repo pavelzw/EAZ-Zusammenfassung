@@ -352,13 +352,57 @@
 \end{karte}
 
 \begin{karte}{Bahnbilanzformel}
+    Sei \(G\) eine Gruppe, die auf einer endlichen Menge \(M\) operiert. 
+    Weiter sei \(R\subseteq M\) ein Vertretersystem der Bahnen, d. h. 
+    aus jeder Bahn liegt genau ein Element in \(R\). Dann gilt: 
+    \[ \#M = \sum_{r\in R} (G:\Stab_G(r)). \]
+\end{karte}
+
+\begin{karte}{Signum/Alternierende Gruppe}
+    Auf der symmetrischen Gruppe \(S_n\) gibt es die \textit{Signums}abbildung 
+    \[ \abb{\sign}{\set{\pm 1}}, \sigma \mapsto \prod_{1\leq i < j \leq n} 
+    \frac{\sigma(i) - \sigma(j)}{i - j}. \]
+
+    \(\sign\) ist ein Gruppenhomomorphismus, der für \(n\geq 2\) 
+    surjektiv ist. Wenn \(\sigma\) ein Produkt von \(d\) Transpositionen ist, 
+    dann gilt \(\sign(\sigma) = (-1)^d\).
+\end{karte}
+
+\begin{karte}{\(p\)-Gruppe, Sylowgruppen}
+    Sei \(p\) eine Primzahl. Eine endliche Gruppe \(G\) heißt eine 
+    \(p\)-Gruppe, wenn ihre Kardinalität eine Potenz von \(p\) ist.
+
+    Es seien \(G\) eine endliche Gruppe und \(p\) eine Primzahl. 
+    Dann heißt eine Untergruppe \(U\) von \(G\) eine 
+    \(p\)-Sylowgruppe, wenn ihre Kardinalität gleich 
+    der maximalen Potenz von \(p\) ist, die die Ordnung von \(G\) teilt. 
+    \[ \# G = \# U \cdot f, \# U = p^e, p \nmid f. \]
     
+    Eine \(p\)-Sylowgruppe ist also wegen des Satzes von Lagrange maximal 
+    unter den \(p\)-Untergruppen einer Gruppe \(G\). 
 \end{karte}
 
-\begin{karte}{}
-
+\begin{karte}{Erster Sylowsatz}
+    Es seien \(G\) eine endliche Gruppe und \(p\) eine Primzahl. 
+    Dann existiert in \(G\) mindestens eine \(p\)-Sylowgruppe. 
 \end{karte}
 
-\begin{karte}{}
+\begin{karte}{Zweiter Sylowsatz}
+    Es seien \(G\) eine endliche Gruppe und \(p\) eine Primzahl. 
+    Weiter sei \(\#G = p^e \cdot f \) die Zerlegung von \(\#G\) 
+    in eine \(p\)-Potenz und eine Zahl \(f\), die kein Vielfaches
+    von \(p\) ist. 
+    \begin{enumerate}
+        \item Jede \(p\)-Untergruppe \(H\) von \(G\) ist in einer 
+        \(p\)-Sylowgruppe von \(G\) enthalten. 
+        \item Je zwei \(p\)-Sylowgruppen von \(G\) sind zueinander konjugiert. 
+        \item Die Anzahl der \(p\)-Sylowgruppen ist ein Teiler von \(f\). 
+        \item Die Anzahl der \(p\)-Sylowgruppen von \(G\) lässt bei Division durch \(p\) Rest \(1\).
+    \end{enumerate}
+\end{karte}
 
+\subsection{Aufbau des Zahlensystems}
+
+\begin{karte}{Ganze Zahlen}
+    Es gibt einen kleinsten Ring \(\Z\), der die natürlichen Zahlen enthält.
 \end{karte}
