@@ -1,0 +1,232 @@
+\section{Ringe und Moduln}
+
+\subsection{Ringe}
+
+\begin{karte}{Ringe}
+    Ein \textit{Ring} ist eine Menge \(R\) mit zwei 
+    Verknüpfungen \(+\) und \(\cdot\), sodass \((R,+)\) 
+    eine abelsche Gruppe ist (Neutralelement \(0\)), 
+    und weiterhin \(\cdot\) assoziativ ist, 
+    ein neutrales Element besitzt (das heiße \(1\)) 
+    und die Distributivgesetze erfüllt sind: 
+    \[ \forall a,b,c,d\in R: (a+b) \cdot c = ac + bc \text{ und } 
+    a \cdot (c+d) = ac+ad. \]
+    Hierbei benutzen wir die Konvention \gqq{Punkt vor Strich}.
+
+    Ein Ring heißt \textit{kommutativ}, wenn seine Multiplikation 
+    kommutativ ist. 
+\end{karte}
+
+\begin{karte}{Ringhomomorphismus}
+    Es seien \(R,S\) zwei Ringe. Ein \textit{Homomorphismus} 
+    zwischen \(R\) und \(S\) ist eine Abbildung 
+    \( \abb{\Phi}{R}{S} \), die sowohl für die Addition 
+    als auch für die Multiplikation ein 
+    Magmenhomorphismus ist und außerdem noch 
+    \[ \Phi(1_R) = 1_S \]
+    erfüllt.\\
+    Als \textit{Kern eines Homomorphismus} zwischen Ringen 
+    bezeichnen wir das Urbild der \(0\). Er ist eine 
+    Untergruppe von \(R\), die unter Multiplikation mit 
+    beliebigen Elementen aus \(R\) abgeschlossen ist.
+\end{karte}
+
+\begin{karte}{Einheitengruppe}
+    Die \textit{Einheiten} eines Ringes \(R\) 
+    sind die Elemente \(r\in R\), für die ein 
+    \( \tilde{r}\in R \) existiert mit 
+    \[ r \tilde{r} = \tilde{r} r = 1_R. \]
+
+    Die Einheiten in \(R\) bilden bezüglich der 
+    Multiplikation eine Gruppe, die wir 
+    mit \(R^\times\) notieren.
+\end{karte}
+
+\begin{karte}{Teilringe}
+    Es sei \(R\) ein Ring.\\
+    Ein \textit{Teilring} von \(R\) ist eine Teilmenge 
+    \( T\subseteq R \), die bezüglich der Addition eine 
+    Untergruppe und bezüglich der Multiplikation ein 
+    Untermonoid von \(R\) ist. Die Eins von \(R\) 
+    soll also auch darin liegen.
+\end{karte}
+
+\begin{karte}{Nullteiler}
+    Sei \(R\) ein Ring.
+    \begin{enumerate}
+        \item Ein Element \(a\in R\) heißt \textit{Nullteiler}, 
+        wenn es ein \(0\neq b\in R\) gibt, für das \(ab=0\) oder 
+        \(ba = 0\) gilt. \\
+        \(R\) heißt \textit{nullteilerfrei}, wenn \(0\) der einzige 
+        Nullteiler von \(R\) ist.
+        \item \(R\) heißt ein \textit{Integritätsbereich}, wenn \(R\) 
+        kommutativ und nullteilerfrei ist. Da \(R\) also wie gesagt 
+        nicht nur aus der Null besteht, gilt \(0\neq 1\).
+        \item \(R\) heißt \textit{Körper}, wenn \(R\) kommutativ ist, 
+        \(0\neq 1\) gilt und jedes von Null verschiedene Element 
+        eine Einheit ist: \(R^\times = R \setminus \set{0}\).
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Halber Euklid}
+    Sei \(p\) eine Primzahl, sodass sich eine ganze Zahl \(a\) findet, 
+    für die \(a^2 + 1\) von \(p\) geteilt wird. \\
+    Dann ist die (multiplikative) Ordnung von \(a + p\Z \in \F_p^\times\)
+    gleich \(4\).
+\end{karte}
+
+\begin{karte}{Charakteristik}
+    Es sei \(R\) ein Ring. Dann gibt es genau einen 
+    Ringhomomorphismus von \(\Z\) nach \(R\).\\
+    Es sei \(n\in \N_0\) der nichtnegative Erzeuger 
+    des Kerns dieses Homomorphismus. Dann heißt \(n\)
+    die Charakteristik von \(R\): \(\charrm(R)\).\\
+    Die Charakteristik eines nullteilerfreien Rings \(R\) 
+    ist entweder \(0\) oder eine Primzahl.
+\end{karte}
+
+\begin{karte}{Ideale, Faktorringe}
+    Es sei \(R\) ein Ring. 
+    \begin{enumerate}
+        \item Ein \textit{Ideal} in \(R\) ist eine Teilmenge 
+        \(I\subseteq R\), die bezüglich der Addition eine 
+        Untergruppe ist und die folgende Eigenschaft hat:
+        \[ \forall x \in I, r\in R: xr \in I \text{ und } rx \in I. \]
+        Kerne von Ringhomomorphismen sind Ideale.
+        \item Sei \(i \subseteq R\) ein Ideal. Da die Addition 
+        kommutativ ist, ist \(I\) ein Normalteiler von \((R,+)\) 
+        und damit \(R/I\) eine kommutative Gruppe bezüglich der Addition 
+        \[ (r+I) + (\tilde{r} + I) = (r + \tilde{r}) + I. \]
+        \[ (r + I) \cdot (\tilde{r} + I) := (r \cdot \tilde{r}) + I \]
+        ist eine assoziative Verknüpfung und es wird so 
+        \(R/I\) zu einem Ring, dem \textit{Faktorring von \(R\) modulo \(I\)}.\\
+        Die kanonische Projektion \(\abb{\pi}{R}{R/I}\) heißt kanonische Projektion.
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Homomorphiesatz}
+    Wenn \(\abb{\Phi}{R}{S}\) ein Ringhomomorphismus ist und 
+    \(I \subseteq \Kern(\Phi)\) ein Ideal in \(R\), dann 
+    \textit{faktorisiert} \(\Phi\) über die kanonische Projektion 
+    von \(R\) nach \(R/I\): Es gibt einen Ringhomomorphismus 
+    \( \abb{\tilde{\Phi}}{R/I}{S} \), sodass \( \Phi = \tilde{\Phi} \circ \pi \).
+    Es gilt \(\tilde{\Phi}(r+I) = \Phi(r)\).
+\end{karte}
+
+\begin{karte}{Chinesischer Restsatz}
+    Es seien \(M,N\in \N\) zwei teilerfremde natürliche Zahlen. 
+    Dann gibt es einen Isomorphismus von Ringen 
+    \[ \Z/(MN \Z) \rightarrow \Z / M\Z \times \Z/N\Z. \]
+    Hierbei wird rechter Hand komponentenweise addiert und multipliziert.
+
+    Algebraische Version: \(R\) ein kommutativer Ring und \(I,J\) 
+    zwei Ideale in \(R\), \(I + J = R\). Dann gibt es einen 
+    Isomorphismus 
+    \[ \abb{\Phi}{R/(I\cap J)}{R/I \times R/J}, \]
+    wobei rechter Hand ein Ring steht, in dem wir komponentenweise addieren 
+    und multiplizieren.
+\end{karte}
+
+\begin{karte}{Eulersche \(\varphi\)-Funktion}
+    \[ \varphi(N) = \abs{(\Z/N\Z)^\times} = \abs{\set{a\in \N \;|\; a\leq N, \ggT(a,N) = 1}}. \]
+\end{karte}
+
+\subsection{Moduln}
+
+\begin{karte}{\(R\)-Modul}
+    Sei \(R\) ein Ring. Ein \textit{\(R\)-Modul} ist eine abelsche 
+    Gruppe \(M\) zusammen mit einer Abbildung 
+    \[ \abb{\cdot}{R\times M}{M}, \]
+    für die die folgenden Bedingungen erfüllt sind: 
+    \begin{align*}
+        \forall r,s\in R, m \in M&: &(r+s)\cdot m &= r\cdot m + s \cdot m \\
+        \forall r\in R, m,n\in M&: &r\cdot (m+n) &= r \cdot m + r \cdot n \\
+        \forall r,s\in R, m\in M&: &(rs) \cdot m &= r \cdot (s \cdot m) \\
+        \forall m\in M&: &1 \cdot m &= m
+    \end{align*}
+\end{karte}
+
+\subsection{Polynomringe und Algebren}
+
+\begin{karte}{Polynomring}
+    Sei \(R\) ein kommutativer Ring. 
+    \[ R[X] := \left\{ \sum_{i=0}^d r_i X^i \;|\; d\in \N_0, r_i \in R \right\}. \]
+    Der Koeffizient \(r_d\) heißt \textit{Leitkoeffizient} von \(f\). 
+    Wir nennen \(f\) \textit{normiert}, wenn der Leitkoeffizient \(1\) ist.
+\end{karte}
+
+\begin{karte}{Rechenregeln Grad}
+    Seien \(f,g\in R[X]\) Polynome. Dann gelten die folgenden 
+    Regeln für die Grade: 
+    \begin{itemize}
+        \item \( \deg(f+g) \leq \max\set{\deg(f), \deg(g)} \).
+        \item \( \deg(f\cdot g) \leq \deg(f) + \deg(g) \).
+        \item \( \deg(f\cdot g) = \deg(f) + \deg(g) \), falls \(R\) nullteilerfrei ist.
+    \end{itemize}
+    Wenn \(R\) nullteilerfrei ist, dann gilt das auch für 
+    \(R[X]\), wir haben \( (R[X])^\times = R^\times \).
+\end{karte}
+
+\begin{karte}{Polynomdivision}
+    Seien \(R\) ein kommutativer Ring und \(f,g\in R[X]\) zwei Polynome. 
+    Weiter sei \(g\neq 0\) mit einer Einheit als Leitkoeffizient.\\
+    Dann gibt es Polynome \(h,r\in R[X]\), sodass \(f=gh+r\) 
+    gilt und \(\deg(r) < \deg(g)\).
+\end{karte}
+
+\begin{karte}{Algebren}
+    Sei \(R\) ein Ring. Eine \textit{Algebra} über \(R\), 
+    kurz auch \textit{\(R\)-Algebra}, ist ein Ring \(A\) 
+    zusammen mit einem Ringhomomorphismus 
+    \( \abb{\sigma}{R}{A} \), sodass für alle Elemente 
+    \(r\in R, a\in A\) die Gleichheit 
+    \[ \sigma(r) \cdot a = a \cdot \sigma(r) \]
+    gilt, d. h. \(\sigma(r)\) kommutiert mit \(a\).\\
+    \(\sigma\) wird \textit{Strukturmorphismus} von \(A\) genannt. \\
+    \((r,a) \mapsto \sigma(r) \cdot a\) macht dann aus \(A\) einen \(R\)-Modul, 
+    die Multiplikation in \(A\) ist \(R\)-bilinear.\\
+    Es gilt auch für alle \(r,s\in R\): \(\sigma(r) \sigma(s) = \sigma(s) \sigma(r)\). 
+    Dann heißt, dass die \textit{Kommutatoren} \(rs - sr, r,s\in R\), 
+    von \(\sigma\) annuliert werden. 
+\end{karte}
+
+\begin{karte}{\(R\)-Algebrenhomomorphismen}
+    Sei \(R\) ein Ring. Ein \textit{Homomomorphismus zwischen zwei \(R\)-Algebren} 
+    \(A\) und \(B\) mit Strukturmorphismen \(\sigma, \tau\) ist ein 
+    Ringhomomorphismus \(\abb{\Phi}{A}{B}\), sodass 
+    \[ \Phi \circ \sigma = \tau. \]
+    Er ist gleichzeitig ein Ringhomomorphismus und \(R\)-Modulhomomorphismus.
+\end{karte}
+
+\begin{karte}{Einsetzabbildung}
+    Sei \(R\) ein kommutativer Ring und \(A\) eine \(R\)-Algebra. 
+    Dann ist die Abbildung 
+    \[ \abb{E_a}{R[X]}{A}, f \mapsto f(a) \]
+    die Einsetzabbildung bei \(a\). 
+    \(E_a\) ist ein \(R\)-Algebrenhomomorphismus. 
+
+    Sei \(K\) ein Körper und \(f\in K[X]\) ein Polynom vom Grad \(d>0\).
+    Ein Element \(a\in K\) heißt eine \textit{Nullstelle} von \(f\), 
+    wenn \(f(a) = 0\).
+\end{karte}
+
+\begin{karte}{Ringe als \(\Z\)-Algebren und Polynomringe}
+    Sei \(\Z[X]\) der Polynomring über \(\Z\). Jeder Ring \(A\) 
+    wird auf genau eine Art zu einer \(\Z\)-Algebra, durch den 
+    eindeutig bestimmten Ringhomomorphismus von \(\Z\) nach \(A\).
+    Die \(\Z\)-Algebrenhomomorphismen von \(\Z[X]\) nach \(A\) 
+    werden also durch Vorgabe eines beliebigen Elements \(a\in A\) 
+    als Bild von \(X\) festgesetzt.
+\end{karte}
+
+\begin{karte}{Formale Potenzreihen}
+    Für jede natürliche Zahl \(n\) gibt es nur eindlich viele Möglichkeiten, 
+    sie als Summe zweier natürlicher Zahlen zu schreiben. Daher liefert für 
+    zwei Abbildungen \( \abb{f,g}{\N_0}{R} \) die Vorschrift 
+    \[ (f * g)(n) := \sum_{\substack{ k,l\in \N_0\\k+l=n }} f(k) g(l) \]
+    eine neue Abbildung von \(\N_0\) nach \(R\).
+
+    Diese Abbildung als Multiplikation und die übliche Addition von Folgen 
+    als Addition machen aus der Menge aller Abbildungen von \(\N_0\) 
+    nach \(R\) einen Ring, den Ring der \textit{formalen Potenzreihen}.
+\end{karte}
