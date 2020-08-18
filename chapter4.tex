@@ -1,0 +1,122 @@
+\section{Drei Exkurse}
+
+\subsection{Aufbau des Zahlensystems}
+
+\begin{karte}{Quotientenkörper}
+    Sei \(R\) ein Integritätsbereich. Dann gibt es einen Körper \(Q\), 
+    der \(R\) als Teilring enthält und folgende Eigenschaft hat: \\
+    Ist \(K\) irgendein Körper und \( \abb{\Phi}{R}{K} \) ein injektiver Ringhomomorphismus, 
+    so lässt sich \(\Phi\) zu einem Ringhomomorphismus \(\abb{\tilde{\Phi}}{Q}{K}\) fortsetzen. \\
+    \(Q\) heißt der \textit{Quotientenkörper} von \(R\).
+    \[ Q := \set{ \frac{z}{n} \;|\;z,n\in R, n\neq 0 }. \]
+\end{karte}
+
+\subsection{Arithmetische Funktionen}
+
+\begin{karte}{Arithmetische Funktion}
+    Eine \textit{arithmetische Funktion} ist eine Abbildung \(\abb{\alpha}{\N}{\C}\). 
+    Die Menge \(\mathcal{A} = \Abb(\N,\C)\) aller arithmetischen Funktionen ist mit den 
+    üblichen Verknüpfungen ein komplexer Vektorraum. \\
+    Wir definieren die \textit{Faltung} durch 
+    \[ \abb{*}{\mathcal{A}\times \mathcal{A}}{\mathcal{A}}, 
+    (\alpha * \beta)(n) := \sum_{d|n} \alpha(d) \cdot \beta(n/d). \]
+    So wird \((\mathcal{A},+,*)\) ein kommutativer Ring. \\
+    Eine arithmetische Funktion \(\alpha\) heißt \textit{strikt multiplikativ}, 
+    falls \(\alpha(1) = 1\) gilt und \(\forall m,n\in \N: \alpha(mn)=\alpha(m)\alpha(n)\). \\
+    Sie heißt \textit{multiplikativ}, falls \(\alpha(1) = 1\) gilt und 
+    \[ \forall m,n\in\N: \ggT(m,n)=1\Rightarrow \alpha(mn)=\alpha(m)\cdot \alpha(n). \]
+\end{karte}
+
+\begin{karte}{Einheiten und Dirichletreihen}
+    Die Einheiten in \(\mathcal{A}\) sind genau die Folgen \(\alpha\) mit 
+    \(\alpha(1) \neq 0\). \\
+    Die multiplikativen arithmetischen Funktionen bilden eine Untergruppe 
+    von \(\mathcal{A}^\times\).
+
+    Für eine arithmetische Funktion \(\alpha\) bezeichnen wir mit 
+    \[ D(\alpha, s) := \sum_{n\in \N} \frac{\alpha(n)}{n^s} \]
+    die zugehörige \textit{formale Dirichletreihe}. Falls diese für 
+    \(\sigma \in \R\) konvergiert, so konvergiert sie auch für alle \(s> \sigma\) 
+    und für alle \(s>\sigma + 1\) sogar absolut (bzw. für alle \(s\) mit \(\Re(s)>\sigma + 1\)).\\
+    Es gilt \(D(\alpha, s) \cdot D(\beta, s) = D(\alpha * \beta, s)\).\\
+
+    Für eine multiplikative arithmetische Funktion \(\alpha\) und eine 
+    Primzahl \(p\) sei 
+    \[ \alpha_p(n) = \begin{cases}
+        \alpha(n), &n=p^k, \\
+        0, &\text{sonst}.
+    \end{cases} \]
+    Das ist der \textit{\(p\)-Anteil} von \(\alpha\)
+    und es gilt \[ \alpha = *_{p\in \P}\alpha_p. \]
+\end{karte}
+
+\subsection{Quadratische Reste}
+
+\begin{karte}{Quadrategruppe}
+    Sei \(F\) ein endlicher Körper mit \(q\) Elementen und Charakteristik 
+    \(p\geq 2\). Dann heißt ein Element \( a\in F^\times \) ein \textit{Quadrat} 
+    in \(F\), wenn ein \(b\in F\) existiert mit \(b^2 = a\). \\
+    Die Menge der Quadrate ist das Bild der Abbildung 
+    \[ \abb{Q}{F^\times}{F^\times}, b\mapsto b^2. \]
+    Der Kern von \(Q\) besteht aus allen Elementen, deren Quadrat \(1\) ist, also \(\pm 1\). 
+    Jedes Element im Bild hat genau zwei Urbilder und \(Q(F^\times) \sim F^\times / \set{\pm 1}\)
+    hat genau \(\frac{q-1}{2}\) Elemente.
+\end{karte}
+
+\begin{karte}{Legendre-Symbol}
+    Sei \(p\geq 3\) eine Primzahl. Für \(a\in \Z\) sei 
+    \[ \legendre{a}{b} = \begin{cases}
+        0, &\text{falls } p | a, \\
+        1, &\text{falls } \exists x\in \Z \setminus p\Z: a \equiv x^2 (\mathrm{mod}\ p), \\
+        -1, &\text{sonst.}
+    \end{cases} \]
+    Hier werden \(o\) und \(\pm 1\) entweder als ganze Zahlen oder als Elemente in 
+    \(\F_p\) aufgefasst. 
+\end{karte}
+
+\begin{karte}{Satz von Euler}
+    Es sei \(p\) eine ungerade Primzahl und \(a\in \Z\). Dann gilt 
+    \[ \legendre{a}{p} \equiv a^{\frac{p-1}{2}} (\mathrm{mod}\ p). \]
+    Die Abbildung \( \abb{\legendre{\cdot}{p}}{\Z}{\set{0,\pm 1}} \) ist strikt multiplikativ.
+\end{karte}
+
+\begin{karte}{Halbheiten}
+    Sei \(p\) eine ungerade Primzahl. Ein \textit{Halbsystem} modulo \(p\) ist 
+    eine Teilmenge \(H\subseteq \F_p^\times\), sodass 
+    \[ H \cap (-H) = \emptyset \text{ und } \F_p^\times = H \cup (-H). \]
+    Zum Beispiel bilden die Restklassen von \(1,2,\ldots, \frac{p-1}{2}\) ein Halbsystem modulo \(p\).\\
+    Es sei \(H\) ein Halbsystem modulo \(p\) und \(a\in \F_p^\times\). Dann heißt 
+    \[ f(a,H) := \abs{ \set{h\in H \;|\; ah\notin H} } \]
+    die \textit{Fehlstandszahl von \(a\) bezüglich \(H\)}.\\
+    Es gilt für beliebiges \(H\)
+    \[ f(1,H) = 0, f(-1,H) = \frac{p-1}{2}. \]
+    Mit dem Halbsystem von oben gilt für \(a = 2+p\Z\) 
+    \[ f(a,H) = \abs{\set{ x\in H \;|\; 2x \notin H }} = \begin{cases}
+        \frac{p-1}{4}, &\text{falls } p \equiv 1\ (\mathrm{mod}\ 4), \\
+        \frac{p+1}{4}, &\text{falls } p \equiv 3\ (\mathrm{mod}\ 4).
+    \end{cases} \]
+\end{karte}
+
+\begin{karte}{Satz von Gauß}
+    Seien \(p\) eine ungerade Primzahl, \(F = \F_p\) und 
+    \(H\subset F^\times\) ein Halbsystem in \(F\) sowie \(a\in F^\times\).
+    Dann gilt 
+    \[ \legendre{a}{p} = (-1)^{f(a,H)}. \]
+\end{karte}
+
+\begin{karte}{Zweiter Ergänzungssatz zum quadratischen Reziprozitätsgesetz}
+    Es gilt 
+    \[ \legendre{2}{p} = (-1)^{\frac{p^2-1}{8}} 
+    = \begin{cases}
+        1, &\text{falls } p \equiv \pm 1\ (\mathrm{mod}\ 8), \\
+        -1, &\text{falls } p \equiv \pm 3\ (\mathrm{mod}\ 8).
+    \end{cases} \]
+    Denn für genau die \(p\) aus der ersten Zeile ist \(f(2,H) \) gerade.
+\end{karte}
+
+\begin{karte}{Das quadratische Reziprozitätsgesetz}
+    Seien \(p\neq l\) zwei ungerade Primzahlen. Dann gilt 
+    \[ \legendre{p}{l} \cdot \legendre{l}{p} = (-1)^{\frac{p-1}{2} \frac{l-1}{2}}. \]
+    Meist benutzen wir die Form 
+    \[ \legendre{p}{l} = \legendre{l}{p} (-1)^{\frac{p-1}{2} \frac{l-1}{2}}. \]
+\end{karte}
