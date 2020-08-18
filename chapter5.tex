@@ -1,0 +1,217 @@
+\section{Teilbarkeitslehre, Primelemente}
+
+\subsection{Teilbarkeit}
+
+\begin{karte}{Teilbarkeit}
+    Sei \(R\) ein kommutativer Ring. Dann heißt \(a\in R\) ein 
+    \textit{Teiler} von \(b\in R\), falls ein \(c\in R\) 
+    existiert, sodass \(b=c\cdot a\). Wir schreiben dann wieder 
+    \( a \;|\; b \) oder manchmal auch \( a \;|_R \; b \).
+\end{karte}
+
+\begin{karte}{Assoziiertheit}
+    Sei \(R\) ein kommutativer Ring. Zwei Elemente \(a,b\in R\) 
+    heißen \textit{assoziiert}, falls eine Einheit \(e\in R^\times\) 
+    existiert, sodass \(b = a \cdot e\). 
+    Für \(R=\Z\) bedeutet das Gleichheit bis aufs Vorzeichen.\\
+    Wenn \(R\) kommutativ und nullteilerfrei ist, dann wird durch 
+    die Teilbarkeit eine Ordnungsrelation auf der Menge der Assoziiertenklassen 
+    festgelegt: \[ a R^\times \preceq b R^\times \Leftrightarrow a \;|\; b. \]
+\end{karte}
+
+\begin{karte}{\( \ggT \), teilerfremd}
+    Sei \(R\) ein kommutativer und  nullteilerfreier Ring und \(a,b\in R\).
+    \begin{enumerate}
+        \item Das Element \(g\in R\) heißt \textit{größter gemeinsamer Teiler} 
+        von \(a\) und \(b\), wenn \(g\) ein gemeinsamer Teiler ist und jeder 
+        gemeinsame Teiler von \(a\) und \(b\) auch \(g\) teilt.
+        \item \(a\) und \(b\) heißen \textit{teilerfremd}, wenn die einzigen 
+        gemeinsamen Teiler die Einheiten in \(R\) sind. 
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Idealisierung}
+    Sei \(R\) ein nullteilerfreier kommutativer Ring. Weiter seien \(a,b\in R\). 
+    \begin{enumerate}
+        \item Ist \(d\) ein gemeinsamer Teiler von \(a\) und \(b\), so teilt \(d\) 
+        auch jede Linearkombination \(ax + by, x,y\in R\).
+        \item Wenn es ein \(g\in R\) gibt, sodass 
+        \[ \set{ ax+by \;|\; x,y\in R } = Rg := \set{rg \;|\; r\in R} \]
+        gilt, dann ist \(g\) ein \(\ggT\) von \(a\) und \(b\).
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Hauptideal}
+    Ein Ideal \(I \subseteq R\) heißt \textit{Hauptideal}, falls ein 
+    \(g\in I\) existiert, sodass \(I = Rg\) gilt. Falls der Ring klar ist, 
+    werden wir oft \((g) := Rg\) schreiben. \\
+    Ein nullteilerfreier kommutativer Ring \(R\), in dem jedes Ideal 
+    ein Hauptideal ist, heißt \textit{Hauptidealring}.
+\end{karte}
+
+\begin{karte}{Assoziiertenklassen und Ideale}
+    Sei \(R\) ein Hauptidealring. Dann gelten: 
+    \begin{enumerate}
+        \item Zwei Elemente \(g,h\in R\) sind genau dann Erzeuger desselben 
+        Hauptideals \(Rg = Rh\), wenn sie assoziiert sind. 
+        \item In jeder nichtleeren Teilmenge \(S\subseteq R\) gibt es ein 
+        Element \(m\), das bezüglich Teilbarkeit minimal ist.
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Euklidischer Ring}
+    Sei \(R\) ein nullteilerfreier kommutativer Ring. Weiter sei 
+    \(\abb{\gamma}{R}{\N_0}\) eine Abbildung. \\
+    Dann heißt \( (R,\gamma) \) ein \textit{euklidischer Ring}, 
+    falls \( \gamma(r) = 0 \Leftrightarrow r = 0 \) 
+    und vor allem folgendes gilt: Für \(a,b\in R, b\neq 0\) gibt 
+    es ein \(c \in R\), sodass 
+    \[ \gamma(a - bc) < \gamma(b). \]
+    Man hat hier also eine quantitative Version einer Division 
+    mit Rest, und dies führt zu ähnlichen Möglichkeiten wie bei 
+    den ganzen Zahlen.\\
+    Jeder euklidische Ring ist ein Hauptidealring.
+\end{karte}
+
+\subsection{Arithmetik in Hauptidealringen}
+
+\begin{karte}{Irreduzibel, prim}
+    Sei \(R\) ein kommutativer Ring. \\
+    Ein Element \(m\in R\) heißt \textit{irreduzibel}, 
+    wenn \(m\notin R^\times \) und für alle \(a,b\in R\) gilt: 
+    \[ m = ab \Rightarrow a\in R^\times \vee b\in R^\times. \]
+    Ein Element \(p\in R\) heißt \textit{Primelement}, wenn \(p\notin R^\times\)
+    und wenn für alle \(a,b\in R\) gilt: 
+    \begin{center}
+        \(p\) teilt \(ab\) \(\Rightarrow\) \(p\) teilt \(a\) oder \(b\).
+    \end{center}
+    Irreduzibilität eines Elementes \(m\in R\) heißt also, dass 
+    seine Assoziiertenklasse \(m R^\times\) in \(R\) bezüglich der 
+    Ordnungsrelation der Teilbarkeit minimal ist: Jeder Teiler 
+    von \(m\) ist entweder eine Einheit oder zu \(m\) assoziiert. \\
+    Das Nullelement eines Rings \(R\) ist niemals irreduzibel. Es ist 
+    prim genau dann, wenn \(R\) nullteilerfrei ist. 
+\end{karte}
+
+\begin{karte}{Prim vs. irreduzibel}
+    Sei \(R\) ein nullteilerfreier kommutativer Ring. 
+    \begin{enumerate}
+        \item Ein von \(0\) verschiedenes Primelement in \(R\) ist immer irreduzibel. 
+        \item Wenn \(R\) ein Hauptidealring ist, dann ist ein irreduzibles Element in \(R\) immer auch prim.
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Primzerlegung in Hauptidealringen}
+    Sei \(R\) eine Hauptidealring. Weiter sei \(\P_R\) ein 
+    Vertretersystem der Assoziiertenklassen von Primelementen \(\neq 0\). \\
+    Dann ist jedes \(r\in R \setminus \set{0}\) assoziiert zu einem Produkt 
+    von endlich vielen Elementen in \(\P_R\).\\
+    Sind weiter \(s,t\in \N_0\) und \(p_1, \ldots, p_s, q_1, \ldots, q_t \in \P_R\) 
+    derart, dass Einheiten \(\delta, \varepsilon \in R^\times\) 
+    existieren mit 
+    \[ r = \delta \cdot p_1 \cdots p_s = \varepsilon \cdot q_1 \cdots q_t, \]
+    so gelten \( \varepsilon = \delta, s = t \) und -- bis auf eine 
+    Vertauschung der Reihenfolge der Faktoren -- es gilt \(p_i = q_i\) 
+    für alle \(1 \leq i \leq s\).
+\end{karte}
+
+\begin{karte}{Summen zweier Quadrate}
+    Eine natürliche Zahl \(n\) ist genau dann als Summe zweier Quadrate 
+    von ganzen Zahlen schreibbar, wenn ihr quadratfreier Anteil keinen 
+    Primteiler hat, der bei Division durch \(4\) Rest \(3\) lässt.
+\end{karte}
+
+\begin{karte}{Primideal}
+    Sei \(R\) ein kommutativer Ring. Ein Ideal \(I \subset R\) 
+    heißt \textit{maximales Ideal}, wenn \(I \neq R\) und wenn 
+    zwischen \(I\) und \(R\) kein weiteres Ideal dazwischenliegt. \\
+    Äquivalent dazu ist, dass \(R/I\) ein Körper ist.\\
+    Ein Ideal \( I \subset R \) heißt \textit{Primideal}, falls für 
+    alle \(x,y\in R\) gilt: 
+    \[ xy \in I \Rightarrow x\in I \vee y \in I. \]
+    Bei Hauptidealringen, die keine Körper sind, fallen die von \(\set{0}\) 
+    verschiedenen Primideale mit den maximalen Idealen zusammen, da beide von 
+    Null verschiedenen Primelementen = irreduziblen Elementen erzeugt werden.\\
+    \(I\) ist genau dann ein Primideal, wenn \(R/I\) ein Integritätsbereich ist.
+\end{karte}
+
+\subsection{Gleichungssysteme}
+
+\begin{karte}{Basen}
+    Es sei \(R\) ein kommutativer Ring und \(M\) ein \(R\)-Modul. 
+    Dann heißt \(B\subseteq M\) eine \(R\)-Basis von \(M\), 
+    wenn sich jedes \(m\in M\) auf eindeutig bestimmte Art als 
+    \[ m = \sum_{b\in B} \lambda_b \cdot b, \lambda_b \in R, \text{ fast alle } \lambda_b = 0 \]
+    schreiben lässt.\\
+    Wenn \(M\) eine Basis \(B\) hat, dann nennt man \(M\) auch einen \textit{freien \(R\)-Modul}.\\
+    Jeder freie \(R\)-Modul \(M\) mit einer endlichen Basis ist zu \(R^r\) 
+    isomorph, wir schreiben die Anzahl der Elemente einer Basis \(r\)
+    als \textit{Rang} von \(M\).
+\end{karte}
+
+\begin{karte}{Basis von Modul}
+    Seien \(R\) ein Hauptidealring, \(n\in \N_0\) und 
+    \(M\subseteq R^n\) ein Untermodul. \\
+    Dann hat \(M\) eine Basis aus höchstens \(n\) Elementen. 
+\end{karte}
+
+\begin{karte}{Unimodulare Matrizen}
+    Sei \(R\) ein kommutativer Ring und \(M \in R^{n\times n}\) gegeben. 
+    Dann ist äquivalent
+    \begin{enumerate}
+        \item Die Spalten von \(M\) bilden eine \(R\)-Basis von \(R^n\).
+        \item Es gibt eine zu \(M\) inverse Matrix mit Einträgen in \(R\).
+        \item \(\det(M) \in R^\times\).
+    \end{enumerate}
+    Matrizen, für die eine dieser Aussagen stimmt, heißen \textit{unimodulare Matrizen}.
+\end{karte}
+
+\begin{karte}{Inhalt}
+    Sei \(R\) ein Hauptidealring und \(v\in R^n\). Dann heißt der \(\ggT\)
+    der Einträge von \(v\) der \textit{Inhalt} von \(v\), kurz \(\Inh(v)\).\\
+    Wenn \(v\) Inhalt \(1\) hat, dann heißt \(v\) auch ein \textit{primitiver Vektor}.
+\end{karte}
+
+\begin{karte}{Basisergänzungssatz}
+    Sei \(R\) ein Hauptidealring. Ein Vektor \(v\in R^n\) ist genau dann 
+    ein Element einer Basis von \(R^n\), wenn \(\Inh(v) = 1\).
+\end{karte}
+
+\begin{karte}{Elementarteilersatz}
+    Seien \(R\) ein Hauptidealring und \(F\) ein freier \(R\)-Modul 
+    vom Rang \(n\) sowie \(U \subseteq F\) ein Untermodul vom Rang \(r\).\\
+    Dann gibt es eine Basis \(\set{ b_1, \ldots, b_n }\) von \(F\) und 
+    Elemente \( e_1 \;|\; e_2 \;|\; \cdots \;|\; e_r \in R \), 
+    sodass 
+    \[ \set{ e_1 b_1, \ldots, e_r b_r } \] 
+    eine Basis von \(U\) ist.\\
+    Die Elemente \(e_1, \ldots, e_r\) sind bis auf Assoziiertheit 
+    eindeutig durch \(U\) festgelegt. 
+\end{karte}
+
+\begin{karte}{Matrixversion Elementarteilersatz}
+    Sei \(M\in R^{n\times m}\) eine ganzzahlige Matrix. Dann gibt es unimodulare
+    Matrizen \(S \in \GL_n(R), T\in \GL_m(R)\), sodass 
+    \[ S^{-1} M T = \begin{pmatrix}
+        D & 0 \\ 0 & 0
+    \end{pmatrix}, D = \diag(e_1, \ldots, e_r), e_1 \;|\; e_2 \;|\; \cdots \;|\; e_r \neq 0. \]
+\end{karte}
+
+\begin{karte}{Lineare Gleichungssysteme}
+    Will man \(Mx = b\) lösen, löst man stattdessen 
+    \[ S^{-1} M T y = S^{-1} b \]
+    und rechnet diesen Lösungsraum zurück mithilfe \(T^{-1}\).
+\end{karte}
+
+\begin{karte}{Struktursatz für endlich erzeugte abelsche Gruppen}
+    Jede endlich erzeugte abelsche Gruppe \(A\) ist ein direktes Produkt 
+    von zyklischen Gruppen. \\
+    Genauer gibt es natürliche Zahlen \(e_1 \;|\; e_2 \;|\; \cdots \;|\; e_s\) 
+    und \(r\in \N_0\), sodass 
+    \[ A \cong \Z/(e_1) \times \cdots \times \Z/(e_s) \times \Z^r. \]
+\end{karte}
+
+\begin{karte}{Einheitengruppen von Körpern}
+    Sei \(K\) ein Körper und \(G\subset K^\times \) eine endliche 
+    Untergruppe seiner Einheitengruppe. Dann ist \(G\) zyklisch.
+\end{karte}
