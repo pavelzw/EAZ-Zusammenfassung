@@ -1,0 +1,125 @@
+\section{Körpererweiterungen}
+
+\subsection{Algebraizität}
+
+\begin{karte}{Algebraisch und transzendent}
+    Sei \(K\) ein Körper und \(L\) ein Körper, der \(K\) umfasst. 
+    Wir nennen \(K \subseteq L\) eine \textit{Körpererweiterung}.
+    \begin{enumerate}
+        \item Ein Element \(\alpha \in L\) heißt \textit{algebraisch über \(K\)}, 
+        falls es ein von Null verschiedenes Polynom \(f \in K[X]\) mit \(f(\alpha) = 0\) gibt.
+        \item Ein Element \(\alpha \in L\), das nicht über \(K\) algebraisch 
+        ist, heißt \textit{transzendent über \(K\)}.
+        \item \(L\) heißt algebraisch über \(K\), wenn jedes Element von \(L\) 
+        über \(K\) algebraisch ist. 
+        \item Es sei \(\alpha \in L\) über \(K\) algebraisch. Dann ist das 
+        \textit{Verschwindungsideal} 
+        \[ I(\alpha) := \set{f\in K[X] \;|\; f(\alpha) = 0} \]
+        nicht das Nullideal im Polynomring. Der normierte Erzeuger 
+        von \(I(\alpha)\) heißt das \textit{Minimalpolynom} von \(\alpha\).
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Adjunktion}
+    Den kleinsten Teilkörper von \(L\), der \(K\) und 
+    ein gegebenes \(\alpha\) von \(L\) enthält, bezeichnen wir mit 
+    \(K(\alpha)\), er entsteht durch \textit{Adjunktion} von \(\alpha\) 
+    zu \(K\).\\
+    Wenn \(\alpha\) algebraisch ist und \(d\) der Grad des Minimalpolynoms 
+    \(m_\alpha\), dann gilt 
+    \[ K(\alpha) \cong K[X]/(m_\alpha). \]
+    Wenn \(\alpha\) transzendent ist, dann ist 
+    \[ K(\alpha) \cong K(X) \]
+    isomorph zum Körper der rationalen Funktionen.
+\end{karte}
+
+\begin{karte}{Algebraische Erweiterung}
+    Sei \(K \subseteq L\) eine Körpererweiterung. Dann gelten 
+    \begin{enumerate}
+        \item Ein \(\alpha \in L\) ist genau dann über \(K\) algebraisch, 
+        wenn die Dimension von \(K(\alpha)\) als \(K\)-Vektorraum endlich ist.
+        \item Die Menge aller über \(K\) algebraischen \(\alpha \in L\) ist 
+        ein Teilkörper von \(L\).
+        \item Sein \(K \subseteq L\) und \(L \subseteq M\) algebraische 
+        Körpererweiterungen, so ist auch die Erweiterung \(K \subseteq M\) algebraisch.
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Grad der Körpererweiterung}
+    Sei \(K \subseteq L\) eine Körpererweiterung. Die Dimension 
+    von \(L\) als \(K\)-Vektorraum nennt man auch den 
+    \textit{Grad von \(L\) über \(K\)}: \([L:K]\).\\
+    Es ist \(\alpha\) genau dann algebraisch, wenn 
+    \([K(\alpha) : K] < \infty\).\\
+    Man sagt auch, \(L\) sei eine endliche Erweiterung von \(K\), 
+    wenn der Grad endlich ist. Sind \( K \subseteq L \subseteq M \) 
+    endliche Körpererweiterungen, so gilt 
+    \[ [M:K] = [M:L] \cdot [L:K]. \]
+    Wenn \(B\) eine \(K\)-Basis von \(L\) ist und \(C\) 
+    eine \(L\)-Basis von \(M\), dann ist \( \set{bc \;|\; b\in B, c\in C} \) 
+    eine \(K\)-Basis von \(M\).\\
+    Der Grad von \(K(\alpha)\) über \(K\) ist gleich dem Grad des Minimalpolynoms 
+    von \(\alpha\) über \(K\). 
+\end{karte}
+
+\begin{karte}{Fundamentalkonstruktion}
+    Seien \(K\) ein Körper und \(f\in K[X]\) ein normiertes Polynom. \\
+    Dann gibt es einen Erweiterungskörper \(L\) von \(K\), über dem \(f\) 
+    in Linearfaktoren zerfällt.
+\end{karte}
+
+\begin{karte}{Algebraischer Abschluss}
+    Ein Körper \(K\) heißt \textit{algebraisch abgeschlossen}, 
+    wenn er keine echten algebraischen Erweiterungskörper besitzt. 
+    Das ist äquivalent dazu, dass jedes nichtkonstante Polynom 
+    in \(K[X]\) mindestens eine Nullstelle in \(K\) hat. \\
+    Ein algebraischer Erweiterungskörper von \(K\), der algebraisch 
+    abgeschlossen ist, heißt ein \textit{algebraischer Abschluss von \(K\)}. 
+    Dieser ist bis auf \(K\)-Algebrenisomorphismen eindeutig bestimmt.
+\end{karte}
+
+\subsection{Irreduzibles}
+
+\begin{karte}{Eisensteinkriterium}
+    Seien \(R\) ein kommutativer nullteilerfreier Ring und \(P \subseteq R\) 
+    ein Primideal. Weiter sei \( f = \sum_{i=0}^d r_i X^i \in R[X] \) 
+    ein nichtkonstantes Polynom, dessen Leitkoeffizient 
+    \(r_d\) nicht in \(P\) liegt, alle anderen Koeffizienten 
+    aber schon. Schließlich sei \(r_0\) kein Produkt von zwei Elementen 
+    aus \(P\).\\
+    Dann ist \(f\) kein Produkt von zwei Faktoren in \(R[X]\), 
+    die kleineren Grad haben.
+\end{karte}
+
+\begin{karte}{Inhalt eines Polynoms}
+    Sei \(R\) ein Hauptidealring. Der \textit{Inhalt} \(\Inh(f)\) 
+    eines Polynoms \(f\in R[X], f \neq 0\), ist definiert als der 
+    Inhalt seiner Koeffizienten. \\
+    Ist \(K\) der Quotientenkörper von \(R\) und \(f \in K[X]\) 
+    ein Polynom \(\neq 0\), so gibt es ein \(0 \neq r \in R\) 
+    mit \(rf \in R[X]\). Wir definieren den Inhalt von \(f\) dann als 
+    \[ \Inh(f) := r^{-1} \Inh(rf). \]
+\end{karte}
+
+\begin{karte}{Lemma von Gauß}
+    Seien \(R\) ein Hauptidealring mit Quotientenkörper \(K\) und 
+    \(f,g\in K[X]\) von Null verschieden. Dann gilt 
+    \[ \Inh(fg) = \Inh(f) \cdot \Inh(g). \]
+\end{karte}
+
+\begin{karte}{Irreduzibilitätskriterium}
+    Sei \(R\) ein Hauptidealring mit Quotientenkörper \(K\) 
+    und \(f\in R[X]\) ein nichtkonstantes Polynom, das in \(R[X]\) 
+    kein Produkt von Faktoren kleineren Grades ist. \\
+    Dann ist \(f\) in \(K[X]\) irreduzibel.
+\end{karte}
+
+\subsection{Klassische Probleme}
+
+\begin{karte}{Kreisteilungspolynom}
+    Sei 
+    \[ \Phi_N(X) = \prod_{k\in (\Z/N\Z)^\times} (X - t^k). \]
+    Die Nullstellen dieses Polynoms sind genau die 
+    primitiven \(n\)-ten Einheitswurzeln in \(\C\). Es gilt 
+    \[ \prod_{d|N} \Phi_d(X) = X^N - 1. \]
+\end{karte}
